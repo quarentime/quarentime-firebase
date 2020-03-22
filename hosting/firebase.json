@@ -9,8 +9,8 @@
     "rewrites": [
       {
         "source": "**",
-        "run":{
-          "serviceId":"quarentime-user-api",
+        "run": {
+          "serviceId": "quarentime-user-api",
           "region": "europe-west1"
         }
       }
