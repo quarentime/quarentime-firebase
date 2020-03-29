@@ -37,11 +37,11 @@ exports.datamodel = {
     },
     "FluLike": {
         "Healthy": "FluLike",
-        "HealtySocialDistancing": "FluLike",
-        "LowProbabilitySuspected": "FluLike",
-        "HighProbabilitySuspected": "FluLike",
+        "HealtySocialDistancing": "HealtySocialDistancing",
+        "LowProbabilitySuspected": "LowProbabilitySuspected",
+        "HighProbabilitySuspected": "LowProbabilitySuspected",
         "FluLike": "FluLike",
-        "Positive": "FluLike",
+        "Positive": "HighProbabilitySuspected",
         "Recovered": "FluLike"
     },
     "Positive": {

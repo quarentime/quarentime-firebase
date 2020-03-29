@@ -12,7 +12,9 @@ exports.createUser = functions.auth.user().onCreate((user) => {
     docRef.set(
         {
             'id': user.uid,
-            'email': user.email
+            'email': user.email,
+            'Status': 'Healthy',
+            'FinalStatus': 'Healthy'
         })
         .catch((err) => {
             console.log(err);
@@ -60,6 +62,36 @@ exports.updateContactsOnStatusChanges = functions.firestore.document('/User/{use
 exports.changeStatusBasedOnContactCreate = functions.firestore.document('/User/{userId}/Contacts/{contactId}')
     .onCreate(async (snap, context) => {
         const newValue = snap.data();
+        const userIdToUpdate = context.params.userId;
+
+        try {
+
+            const db = admin.firestore();
+
+            var snapshot = await db.collection('User')
+                .doc(userIdToUpdate).get();
+
+            userToUpdate = snapshot.data();
+
+            console.log(userToUpdate);
+            console.log(newValue);
+
+            var newStatus = datamodel[userToUpdate.FinalStatus][newValue.Status];
+            
+            console.log(`New Status: ${newStatus}`);
+            
+
+            // We don't want to trigger unecessary updates
+            if (newStatus == userToUpdate.FinalStatus) {
+                return;
+            }
+
+            await db.collection('User')
+                .doc(userIdToUpdate).update({ FinalStatus: newStatus });
+
+        } catch (error) {
+            console.log(error);
+        }
 
         console.log(`Contact ${newValue.Name} creatd with status: ${newValue.Status}`);
     });
@@ -83,10 +115,12 @@ exports.changeStatusBasedOnContactUpdate = functions.firestore.document('/User/{
 
             userToUpdate = snapshot.data();
 
-            var newStatus = datamodel[userToUpdate.Status][newValue.Status];
+
+
+            var newStatus = datamodel[userToUpdate.FinalStatus][newValue.Status];
 
             // We don't want to trigger unecessary updates
-            if (newStatus == newValue.Status) {
+            if (newStatus == userToUpdate.FinalStatus) {
                 return;
             }
 
