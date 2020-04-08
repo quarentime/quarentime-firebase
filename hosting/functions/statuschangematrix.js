@@ -3,7 +3,7 @@ exports.datamodel = {
         "Healthy": "Healthy",
         "HealtySocialDistancing": "HealtySocialDistancing",
         "LowProbabilitySuspected": "LowProbabilitySuspected",
-        "HighProbabilitySuspected": "HighProbabilitySuspected",
+        "HighProbabilitySuspected": "LowProbabilitySuspected",
         "FluLike": "Healthy",
         "Positive": "HighProbabilitySuspected",
         "Recovered": "Healthy"
