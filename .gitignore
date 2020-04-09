@@ -64,7 +64,8 @@ node_modules/
 # dotenv environment variables file
 .env
 
-testlogin.html
+login-dev.html
+login-prod.html
 
 # General
 .DS_Store
