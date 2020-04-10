@@ -13,8 +13,8 @@ exports.createUser = functions.auth.user().onCreate((user) => {
         {
             'id': user.uid,
             'email': user.email,
-            'Status': 'Healthy',
-            'FinalStatus': 'Healthy'
+            'Status': 'Pending',
+            'FinalStatus': 'Pending'
         })
         .catch((err) => {
             console.log(err);
