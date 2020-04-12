@@ -6,7 +6,8 @@ exports.datamodel = {
         "HighProbabilitySuspected": "LowProbabilitySuspected",
         "FluLike": "Healthy",
         "Positive": "HighProbabilitySuspected",
-        "Recovered": "Healthy"
+        "Recovered": "Healthy",
+        "Pending": "Healthy"
     },
     "HealtySocialDistancing": {
         "Healthy": "HealtySocialDistancing",
@@ -15,7 +16,8 @@ exports.datamodel = {
         "HighProbabilitySuspected": "HighProbabilitySuspected",
         "FluLike": "HealtySocialDistancing",
         "Positive": "Positive",
-        "Recovered": "HealtySocialDistancing"
+        "Recovered": "HealtySocialDistancing",
+        "Pending": "HealtySocialDistancing"
     },
     "LowProbabilitySuspected": {
         "Healthy": "LowProbabilitySuspected",
@@ -24,7 +26,8 @@ exports.datamodel = {
         "HighProbabilitySuspected": "HighProbabilitySuspected",
         "FluLike": "LowProbabilitySuspected",
         "Positive": "HighProbabilitySuspected",
-        "Recovered": "LowProbabilitySuspected"
+        "Recovered": "LowProbabilitySuspected",
+        "Pending": "LowProbabilitySuspected"
     },
     "HighProbabilitySuspected": {
         "Healthy": "HighProbabilitySuspected",
@@ -33,7 +36,8 @@ exports.datamodel = {
         "HighProbabilitySuspected": "HighProbabilitySuspected",
         "FluLike": "HighProbabilitySuspected",
         "Positive": "HighProbabilitySuspected",
-        "Recovered": "HighProbabilitySuspected"
+        "Recovered": "HighProbabilitySuspected",
+        "Pending": "HighProbabilitySuspected"
     },
     "FluLike": {
         "Healthy": "FluLike",
@@ -42,7 +46,8 @@ exports.datamodel = {
         "HighProbabilitySuspected": "LowProbabilitySuspected",
         "FluLike": "FluLike",
         "Positive": "HighProbabilitySuspected",
-        "Recovered": "FluLike"
+        "Recovered": "FluLike",
+        "Pending": "FluLike"
     },
     "Positive": {
         "Healthy": "Positive",
@@ -51,7 +56,8 @@ exports.datamodel = {
         "HighProbabilitySuspected": "Positive",
         "FluLike": "Positive",
         "Positive": "Positive",
-        "Recovered": "Positive"
+        "Recovered": "Positive",
+        "Pending": "Positive"
     },
     "Recovered": {
         "Healthy": "Recovered",
@@ -60,7 +66,17 @@ exports.datamodel = {
         "HighProbabilitySuspected": "Recovered",
         "FluLike": "Recovered",
         "Positive": "Recovered",
-        "Recovered": "Recovered"
+        "Recovered": "Recovered",
+        "Pending": "Recovered"
+    },
+    "Pending": {
+        "Healthy": "Pending",
+        "HealtySocialDistancing": "Pending",
+        "LowProbabilitySuspected": "Pending",
+        "HighProbabilitySuspected": "Pending",
+        "FluLike": "Pending",
+        "Positive": "Pending",
+        "Recovered": "Pending",
+        "Pending": "Pending"
     }
-
 };
